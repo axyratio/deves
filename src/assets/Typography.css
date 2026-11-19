@@ -1,0 +1,28 @@
+/* typography.css — ฟอนต์และขนาดตัวอักษรของทั้งระบบ (อิงจาก theme MUI เดิม) */
+
+@theme {
+  --font-sans: "Sarabun", ui-sans-serif, system-ui, sans-serif;
+
+  /* ขนาดตามชื่อที่ใช้ในระบบ → class: text-heading5, text-body1 ... */
+  --text-heading5: 28px;
+  --text-heading5--line-height: 34px;
+  --text-heading6: 26px;
+  --text-heading6--line-height: 32px;
+  --text-body1: 22px;
+  --text-body1--line-height: 26px;
+  --text-body2: 20px;
+  --text-body2--line-height: 26px;
+
+  /* ระยะห่างตัวอักษร (MUI เดิม 0.6px) */
+  --tracking-normal: 0.6px;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-sans);
+    font-size: var(--text-body1);
+    line-height: 26px;
+    letter-spacing: 0.6px;
+    -webkit-text-stroke-width: 0.15px;
+  }
+}

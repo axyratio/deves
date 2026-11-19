@@ -1,0 +1,185 @@
+/* colors.css — โทเคนสีของทั้งระบบ (แก้สีที่ไฟล์นี้ที่เดียว) */
+
+/* Palette แบรนด์ (ค่าประมาณจากภาพ ปรับตาม design จริงได้) */
+@theme static {
+  --color-brand-50: #eef2ff;
+  --color-brand-100: #dbe4fb;
+  --color-brand-200: #b7c8f5;
+  --color-brand-300: #8da7ec;
+  --color-brand-400: #5f7fdc;
+  --color-brand-500: #3f5fc4;
+  --color-brand-600: #012169; /* น้ำเงินการ์ด */
+  --color-brand-700: #2b3b82;
+  --color-brand-800: #1f2b66;
+  --color-brand-900: #012169; /* น้ำเงินหัวข้อ */
+
+  --color-accent-300: #fff5cc;
+  --color-accent-400: #fcd34d;
+  --color-accent-500: #ffcd00; /* เหลืองปุ่ม */
+  --color-accent-600: #e0ad00;
+
+  --color-alert-100: #fde4e4;
+  --color-alert-500: #e5533d;
+  --color-alert-600: #d7282f; /* แดง badge */
+  --color-alert-700: #b3201a;
+}
+
+/* โหมดสว่าง */
+:root {
+  --background: #fffaf0;
+  --foreground: #012169;
+  --surface: #ffffff;
+  --card: #ffffff;
+  --surface-foreground: #012169;
+  --muted: #f3efe3;
+  --muted-foreground: #6b7280;
+  --border: #e8e2d0;
+  --ring: var(--color-accent-500);
+
+  --primary: var(--color-brand-600);
+  --primary-hover: var(--color-brand-700);
+  --primary-foreground: #ffffff;
+
+  --secondary: var(--color-accent-500);
+  --secondary-hover: var(--color-accent-600);
+  --secondary-foreground: #012169;
+
+  --success: #16a34a;
+  --success-foreground: #ffffff;
+  --warning: var(--color-accent-500);
+  --warning-foreground: #012169;
+  --danger: var(--color-alert-600);
+  --danger-foreground: #ffffff;
+  --danger-soft: var(--color-alert-100);
+  --info: var(--color-brand-500);
+  --info-foreground: #ffffff;
+
+  --radius: 0.75rem;
+
+  --content: #012169;             /* ข้อความหลัก */
+  --content-secondary: #616165;   /* ข้อความรอง */
+  --content-inverse: #ffffff;     /* ข้อความบนพื้นเข้ม */
+  --content-link: var(--color-brand-600);
+  --content-link-hover: var(--color-brand-700);
+  --content-danger: var(--color-alert-600);
+  --content-success: #15803d;
+
+
+  /* สีตามประเภทประกัน */
+  --insurance-car: var(--color-brand-600);        /* รถยนต์: น้ำเงิน */
+  --insurance-car-foreground: #ffffff;
+  --insurance-car-soft: #dbe4fb;
+
+  --insurance-travel: #0e7490;                    /* เดินทาง: เขียวน้ำทะเล */
+  --insurance-travel-foreground: #ffffff;
+  --insurance-travel-soft: #cffafe;
+
+  --insurance-health: #15803d;                    /* สุขภาพ: เขียว */
+  --insurance-health-foreground: #ffffff;
+  --insurance-health-soft: #dcfce7;
+
+  --insurance-accident: #c2410c;                  /* อุบัติเหตุ: ส้ม */
+  --insurance-accident-foreground: #ffffff;
+  --insurance-accident-soft: #ffedd5;
+
+  --insurance-fire: var(--color-alert-600);       /* อัคคีภัย: แดง */
+  --insurance-fire-foreground: #ffffff;
+  --insurance-fire-soft: #fde4e4;
+}
+
+/* โหมดมืด */
+.dark {
+  --background: #0d1433;
+  --foreground: #f3f4f6;
+  --surface: #012169;
+  --card: #012169;
+  --surface-foreground: #f3f4f6;
+  --muted: #1f2b66;
+  --muted-foreground: #a5b0d6;
+  --border: #2b3b82;
+
+  --primary: var(--color-brand-500);
+  --primary-hover: var(--color-brand-400);
+
+  --secondary-foreground: #012169;
+
+  --content: #f3f4f6;
+  --content-secondary: #a5b0d6;
+  --content-inverse: #012169;
+  --content-link: var(--color-brand-300);
+  --content-link-hover: var(--color-brand-200);
+  --content-danger: #f87171;
+  --content-success: #4ade80;
+
+  --insurance-car-soft: #1f2b66;
+  --insurance-travel-soft: #164e63;
+  --insurance-health-soft: #14532d;
+  --insurance-accident-soft: #7c2d12;
+  --insurance-fire-soft: #7f1d1d;
+
+  
+}
+
+
+/* ผูกตัวแปรด้านบนเข้ากับ Tailwind → ได้ class เช่น bg-primary, text-muted-foreground
+   ต้องใช้ inline เพื่อให้ค่าตามตัวแปร (สลับ .dark ได้) ไม่ถูก resolve ตอน build */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-card: var(--card);
+  --color-surface-foreground: var(--surface-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-ring: var(--ring);
+
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-foreground: var(--primary-foreground);
+
+  --color-secondary: var(--secondary);
+  --color-secondary-hover: var(--secondary-hover);
+  --color-secondary-foreground: var(--secondary-foreground);
+
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-danger: var(--danger);
+  --color-danger-foreground: var(--danger-foreground);
+  --color-danger-soft: var(--danger-soft);
+  --color-info: var(--info);
+  --color-info-foreground: var(--info-foreground);
+
+  --radius-theme: var(--radius);
+
+  --color-content: var(--content);
+  --color-content-secondary: var(--content-secondary);
+  --color-content-inverse: var(--content-inverse);
+  --color-content-link: var(--content-link);
+  --color-content-link-hover: var(--content-link-hover);
+  --color-content-danger: var(--content-danger);
+  --color-content-success: var(--content-success);
+
+
+  --color-insurance-car: var(--insurance-car);
+  --color-insurance-car-foreground: var(--insurance-car-foreground);
+  --color-insurance-car-soft: var(--insurance-car-soft);
+
+  --color-insurance-travel: var(--insurance-travel);
+  --color-insurance-travel-foreground: var(--insurance-travel-foreground);
+  --color-insurance-travel-soft: var(--insurance-travel-soft);
+
+  --color-insurance-health: var(--insurance-health);
+  --color-insurance-health-foreground: var(--insurance-health-foreground);
+  --color-insurance-health-soft: var(--insurance-health-soft);
+
+  --color-insurance-accident: var(--insurance-accident);
+  --color-insurance-accident-foreground: var(--insurance-accident-foreground);
+  --color-insurance-accident-soft: var(--insurance-accident-soft);
+
+  --color-insurance-fire: var(--insurance-fire);
+  --color-insurance-fire-foreground: var(--insurance-fire-foreground);
+  --color-insurance-fire-soft: var(--insurance-fire-soft);
+}
