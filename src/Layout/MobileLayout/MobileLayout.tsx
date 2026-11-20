@@ -1,5 +1,4 @@
 import type { ReactNode } from "react";
-import { BottomNav } from "../BottomNav/BottomNav";
 
 export type MobileLayoutProps = {
     children: ReactNode;
@@ -15,15 +14,15 @@ export function MobileLayout({ children, header, footer, className = "" }: Mobil
             {/* กรอบหน้าจอมือถือ กว้างสุด 448px อยู่กึ่งกลาง */}
             <div className="mx-auto flex min-h-dvh w-full max-w-md flex-col bg-background text-foreground shadow-xl">
                 {header && (
-                    <header className="sticky top-0 z-20 border-b border-border bg-surface">
+                    <header className="sticky top-0 z-20 ">
                         {header}
                     </header>
                 )}
 
+                
                 <main className={`flex flex-1 flex-col p-4 ${className}`}>
                     {children}
                 </main>
-                <BottomNav />
 
                 {footer && (
                     <footer className="sticky bottom-0 z-20 border-t border-border bg-surface pb-[env(safe-area-inset-bottom)]">

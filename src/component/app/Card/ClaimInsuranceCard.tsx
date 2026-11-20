@@ -5,13 +5,14 @@ import carInsurance from "../../../assets/icon/unionIcon.svg";
 
 type ClaimInsuranceCardProps = {
     category?: "car" | "travel" | "health" | "accident" | "fire";
-    type: "1" | "2" | "3";
+    type: string;
     title: string;
     status: string;
     licensePlate: string;
+    onClaim?: () => void;
 }
 
-export function ClaimInsuranceCard({ type, title, status, licensePlate, category = "accident" }: ClaimInsuranceCardProps) {
+export function ClaimInsuranceCard({ type, title, status, licensePlate, onClaim, category = "accident" }: ClaimInsuranceCardProps) {
     const colorType = `insurance-${category}`; // ใช้สีพื้นของการ์ดประกันภัยรถยนต์
 
     return (
@@ -48,9 +49,9 @@ export function ClaimInsuranceCard({ type, title, status, licensePlate, category
                 <div style={{ fontSize: "24px", fontWeight: "bold" }} className="licensePlate">{licensePlate}</div>
             </div>
             <div className="footer flex flex-row gap-2 justify-center ">
-                <Button onClick={() => { }} style={{fontSize: "13px", color: "var(--color-insurance-" + category + "-foreground)" }} ariaLabel="View Details" variant="outline" className="font-semibold">รายละเอียด</Button>
+                <Button onClick={onClaim} style={{fontSize: "13px", color: "var(--color-insurance-" + category + "-foreground)" }} ariaLabel="View Details" variant="outline" className="font-semibold">รายละเอียด</Button>
                 <Button
-                    onClick={() => { }}
+                    onClick={onClaim}
                     style={{
                         padding: "6px 0px",
                         fontSize: "13px",

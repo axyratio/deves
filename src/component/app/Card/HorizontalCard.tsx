@@ -1,81 +1,71 @@
 import React from "react";
 import { IconBagde } from "../../common/IconBagde/IconBagde";
-import { themeColor } from "../../../assets/ThemeColors";
+
+const VARIANTS = {
+    default: {
+        card: "bg-surface border-border",
+        iconColor: "accent-300",
+    },
+    yellow: {
+        card: "bg-accent-300/35 border-accent-400",
+        iconColor: "accent-500",
+    },
+    danger: {
+        card: "bg-danger/10 border-danger",
+        iconColor: "alert-500",
+    },
+} as const;
+
+export type HorizontalCardVariant = keyof typeof VARIANTS;
 
 export interface HorizontalCardProps {
-    variant?: "highlight" | "default";
-    title: string;
+    variant?: HorizontalCardVariant;
+    children?: React.ReactNode;
+    title?: string;
     subtitle?: string;
     icon: React.ReactNode;
     rightElement?: React.ReactNode;
+    className?: string;
     onClick?: () => void;
 }
 
 export const HorizontalCard: React.FC<HorizontalCardProps> = ({
     variant = "default",
+    children,
     title,
     subtitle,
     icon,
     rightElement,
+    className,
     onClick,
 }) => {
-    const isHighlight = variant === "highlight";
+    const theme = VARIANTS[variant];
+    const hasText = Boolean(title || subtitle);
 
     return (
         <div
             onClick={onClick}
-            style={{
-                padding: 16,
-                borderRadius: 16,
-                borderWidth: 1,
-                borderStyle: "solid",
-                backgroundColor: isHighlight
-                    ? `color-mix(in srgb, ${themeColor("accent-300")} 35%, ${themeColor("surface")})`
-                    : themeColor("surface"),
-                borderColor: isHighlight
-                    ? themeColor("accent-300")
-                    : themeColor("border"),
-            }}
-            className="w-full flex items-center justify-between text-left cursor-pointer transition-transform active:scale-[0.98]"
+            className={`flex w-full cursor-pointer items-center justify-between rounded-2xl border p-4 text-left
+                        transition-transform active:scale-[0.98] ${theme.card} ${className}`}
         >
-            <div style={{ gap: 14 }} className="flex items-center">
-                <IconBagde
-                    icon={icon}
-                    isTextBagde={false}
-                    cardColor={isHighlight ? "accent-500" : "accent-300"}
-                />
+            <div className="flex items-center gap-3.5">
+                <IconBagde icon={icon} isTextBagde={false} cardColor={theme.iconColor} />
 
-                <div style={{ gap: 2 }} className="flex flex-col">
-                    <p
-                        style={{
-                            fontSize: 15,
-                            lineHeight: 1.35,
-                            color: themeColor("primary"),
-                        }}
-                        className="font-bold"
-                    >
-                        {title}
-                    </p>
-                    {subtitle && (
-                        <p
-                            style={{
-                                fontSize: 12,
-                                lineHeight: 1.35,
-                                color: themeColor("primary"),
-                            }}
-                            className="font-normal"
-                        >
-                            {subtitle}
-                        </p>
-                    )}
-                </div>
+                {hasText ? (
+                    <div className="flex flex-col gap-0.5">
+                        {title && (
+                            <p className="text-[15.5px] font-bold leading-[1.35] text-primary">{title}</p>
+                        )}
+                        {subtitle && (
+                            <p className="text-[12.5px] font-normal leading-[1.35] text-content-secondary">{subtitle}</p>
+                        )}
+                    </div>
+                ) : (
+                    children
+                )}
             </div>
 
-            {rightElement && (
-                <div className="shrink-0">
-                    {rightElement}
-                </div>
-            )}
+            {rightElement && <div className="shrink-0">{rightElement}</div>}
         </div>
     );
 };

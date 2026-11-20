@@ -1,7 +1,9 @@
+import { themeColor } from "../../../assets/ThemeColors";
+import type { Lang } from "../../../models/common/language";
 
 type ChangeLanguageProps = {
     isChecked: boolean;
-    onChange: (language: string) => void;
+    onChange: (language: Lang) => void;
 };
 
 export function ChangeLanguage({ isChecked, onChange }: ChangeLanguageProps) {
@@ -9,11 +11,11 @@ export function ChangeLanguage({ isChecked, onChange }: ChangeLanguageProps) {
     return (
         <>
             <label
+                style={{ backgroundColor: themeColor("surface")}}
                 htmlFor="Toggle3"
                 className="select-none inline-flex cursor-pointer items-center gap-1 rounded-full border-border border p-1 text-sm font-medium"
             >
                 <input
-                
                     id="Toggle3"
                     type="checkbox"
                     className="peer sr-only"

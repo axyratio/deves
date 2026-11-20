@@ -48,7 +48,7 @@ const navItems: NavItem[] = [
 
 export const BottomNav: React.FC = () => {
   return (
-    <nav className="sticky bottom-0 left-0 right-0 z-50 bg-white border-t border-gray-100 rounded-b-[28px] shadow-[0_-4px_20px_rgba(0,0,0,0.04)] px-4 pt-3 pb-4">
+    <nav className="sticky bottom-0 left-0 right-0 z-50 bg-white border-t border-border rounded-b-[28px] shadow-[0_-4px_20px_rgba(0,0,0,0.04)] px-4 pt-3 pb-4">
       <ul className="flex justify-around items-center max-w-md mx-auto">
         {navItems.map((item) => (
           <li key={item.path} className="flex-1">
@@ -62,7 +62,7 @@ export const BottomNav: React.FC = () => {
                   <div
                     className={`w-14 h-10 rounded-2xl flex items-center justify-center transition-colors duration-200 ${
                       isActive
-                        ? 'bg-[#FFD000]' // สีเหลืองตามภาพ
+                        ? 'bg-secondary' // สีเหลืองตามภาพ
                         : 'bg-transparent group-hover:bg-gray-50'
                     }`}
                   >
@@ -77,8 +77,8 @@ export const BottomNav: React.FC = () => {
                   <span
                     className={`text-xs transition-colors duration-200 ${
                       isActive
-                        ? 'text-[#1B3664] font-bold' // สีน้ำเงินเข้มตัวหนาเมื่อ Active
-                        : 'text-[#9CA3AF] font-medium' // สีเทาเมื่อ Inactive
+                        ? 'text-primary font-bold' // สีน้ำเงินเข้มตัวหนาเมื่อ Active
+                        : 'text-content-secondary font-medium' // สีเทาเมื่อ Inactive
                     }`}
                   >
                     {item.label}

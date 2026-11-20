@@ -38,11 +38,12 @@ export function IconBagde({
     return (
         <div className="relative inline-flex">
             <button
+                
                 type="button"
                 onClick={onClick}
                 disabled={disabled}
                 aria-label={ariaLabel}
-                style={{ backgroundColor: themeColor(cardColor) }}
+                style={{ backgroundColor: themeColor(cardColor), ...style }}
                 className="inline-flex size-10 shrink-0 items-center rounded-lg justify-center bg-surface/20 text-surface-foreground
            transition-[filter]  text-body1
            

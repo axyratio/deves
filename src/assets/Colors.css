@@ -44,12 +44,13 @@
   --secondary-hover: var(--color-accent-600);
   --secondary-foreground: #012169;
 
-  --success: #16a34a;
+  --success: #15703a;
   --success-foreground: #ffffff;
   --warning: var(--color-accent-500);
   --warning-foreground: #012169;
   --danger: var(--color-alert-600);
   --danger-foreground: #ffffff;
+  --danger-medium: var(--color-alert-500);
   --danger-soft: var(--color-alert-100);
   --info: var(--color-brand-500);
   --info-foreground: #ffffff;

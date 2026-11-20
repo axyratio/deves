@@ -42,7 +42,7 @@ export const ClaimActionCard: React.FC<ClaimActionCardProps> = ({
             <IconBagde
                 icon={icon}
                 isTextBagde={false}
-                cardColor={isEmergency ? "danger" : "accent-300"}
+                cardColor={isEmergency ? "danger-medium" : "accent-300"}
             />
 
             <div style={{ gap: 2 }} className="flex flex-col">
@@ -51,7 +51,7 @@ export const ClaimActionCard: React.FC<ClaimActionCardProps> = ({
                         fontSize: 14,
                         lineHeight: 1.35,
                         color: isEmergency
-                            ? themeColor("content-danger") // #d32a22
+                            ? themeColor("danger-medium") // #d32a22
                             : themeColor("primary"),       // #14204f
                     }}
                     className="font-bold"
@@ -64,7 +64,7 @@ export const ClaimActionCard: React.FC<ClaimActionCardProps> = ({
                         style={{
                             fontSize: 12,
                             lineHeight: 1.35,
-                            color: themeColor("alert-500"), // #e5372e
+                            color: themeColor("danger-medium"), // #e5372e
                         }}
                         className="font-medium"
                     >

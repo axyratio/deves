@@ -1,7 +1,7 @@
 /* typography.css — ฟอนต์และขนาดตัวอักษรของทั้งระบบ (อิงจาก theme MUI เดิม) */
 
 @theme {
-  --font-sans: "Sarabun", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Anuphan", sans-serif;
 
   /* ขนาดตามชื่อที่ใช้ในระบบ → class: text-heading5, text-body1 ... */
   --text-heading5: 28px;
@@ -13,7 +13,6 @@
   --text-body2: 20px;
   --text-body2--line-height: 26px;
 
-  /* ระยะห่างตัวอักษร (MUI เดิม 0.6px) */
   --tracking-normal: 0.6px;
 }
 
