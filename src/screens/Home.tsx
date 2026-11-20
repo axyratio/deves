@@ -2,7 +2,7 @@ import { useState } from "react";
 import { IconBagde } from "../component/common/IconBagde/IconBagde";
 import { Car, FileCheck2, Home as HomeIcon, Heart, Plane, Shield, Phone, Video, ChevronRight, TriangleExclamationPoint, CarTaxiFront } from "lucide-react";
 
-import { ClaimInsuranceCard } from "../component/app/Card/ClaimInsuranceCard";
+import { ClaimInsuranceCard, ClaimInsuranceSlider } from "../component/app/Card/ClaimInsuranceCard";
 import { ClaimActionCard } from "../component/app/Card/ClaimActionCard";
 import { themeColor } from "../assets/ThemeColors";
 import { HorizontalCard } from "../component/app/Card/HorizontalCard";
@@ -41,19 +41,21 @@ export function Home() {
             </Modal>
             {/* 1. Header (TODO: แยกเป็น <HomeHeader /> ไปใส่ใน prop header ของ MobileLayout) */}
             <div className="flex flex-col gap-3">
-                {policies.map((policy) => (
-                    <ClaimInsuranceCard
-                        key={policy.policyNumber}
-                        status={policy.policyStatus}
-                        title="ประกันรถยนต์"
-                        type={policy.insuranceType}
-                        licensePlate={policy.licensePlate}
-                        category="accident"
-                        onClaim={() =>
-                            navigate(`/accident/${encodeURIComponent(policy.policyNumber)}/term`)
-                        }
-                    />
-                ))}
+                <ClaimInsuranceSlider>
+                    {policies.map((policy) => (
+                        <ClaimInsuranceCard
+                            key={policy.policyNumber}
+                            status={policy.policyStatus}
+                            title="ประกันรถยนต์"
+                            type={policy.insuranceType}
+                            licensePlate={policy.licensePlate}
+                            category="accident"
+                            onClaim={() =>
+                                navigate(`/accident/${encodeURIComponent(policy.policyNumber)}/term`)
+                            }
+                        />
+                    ))}
+                </ClaimInsuranceSlider>
             </div>
 
             {/* 2. Section เลือกประกันภัยที่ต้องการเคลม */}

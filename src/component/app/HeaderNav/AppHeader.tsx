@@ -16,7 +16,7 @@ export function AppHeader({ variant, title, username, countBadge = 0 }: AppHeade
     const { lang, setLang } = useLang();
 
     return (
-        <div className="flex gap-3 items-center justify-between px-[18px]  pt-4">
+        <div className="flex gap-3 items-center justify-between px-[18px] py-4  bg-surface">
             {variant === "home" ? (
                 <div className="flex-row flex justify-between w-full " >
                     <div className="flex items-center gap-3 justify-between">

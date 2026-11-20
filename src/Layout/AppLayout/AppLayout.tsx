@@ -34,7 +34,7 @@ export function AppLayout() {
                 <AppHeader
                     variant={isHome ? "home" : "sub"}
                     title={page?.title}
-                    username=""
+                    username="Kittiphong"
                     countBadge={9}
                 />
             }
