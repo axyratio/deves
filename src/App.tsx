@@ -1,8 +1,5 @@
-import { useState } from "react";
 import { Route, Routes } from "react-router-dom"
-import { ChangeLanguage } from "./component/app/ChangeLanguage/ChangeLanguage";
 import { Home } from "./screens/Home";
-import { MobileLayout } from "./Layout/MobileLayout/MobileLayout";
 import { AppLayout } from "./Layout/AppLayout/AppLayout";
 import { TermAndCondition } from "./screens/page/TeamAndCondition";
 import { AccidentReport } from "./screens/page/AccidentReport"

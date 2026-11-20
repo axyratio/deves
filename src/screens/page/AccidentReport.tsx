@@ -4,13 +4,10 @@ import { IconBagde } from "../../component/common/IconBagde/IconBagde";
 import { policyData } from "../../mockData/policyData";
 import { Button } from "../../component/common/Button/Button";
 import { Check } from "lucide-react";
-import { useNavigate } from "react-router-dom";
 
 export function AccidentReport() {
     
     const policies = policyData.policyData;
-
-    const navigate = useNavigate();
 
     return (
         <div className="claim-policy flex flex-col gap-3">
